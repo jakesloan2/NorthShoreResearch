@@ -15,15 +15,15 @@ window.SITE = {
   gymName: "[PARTNER GYM NAME]",                   // shown on the "collect in gym" section and delivery option
   currency: "GBP",
   locale: "en-GB",
-  announce: "Free UK delivery on orders over £50",
+  announce: "Free UK delivery on orders over £200",
 
   /* Service promises shown on the site. Only state what is true for
      your business — these appear as facts to customers. */
   promises: {
-    dispatch: "Orders before 2pm dispatched same working day",
+    dispatch: "Orders before 12pm dispatched same working day",
     returns: "30-day returns on unopened items",
     returnsDays: 30,
-    testing: "Batch certificates published for tested products"
+    testing: "Certificates published for tested products"
   },
 
   // Shipping — edit freely. Prices in GBP.
@@ -32,7 +32,6 @@ window.SITE = {
     options: [
       { id: "standard", label: "Standard tracked", eta: "2–3 working days", price: 3.95 },
       { id: "express",  label: "Express tracked",  eta: "Next working day",  price: 6.95 },
-      { id: "collect",  label: "Collect in gym",   eta: "Ready next working day", price: 0, note: "Collect from the front desk", collect: true }
     ]
   },
 
