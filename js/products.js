@@ -17,22 +17,18 @@
    ========================================================= */
 window.PRODUCTS = [
   {
-    id: "whey-protein",
-    name: "Whey Protein Isolate",
-    category: "Protein",
-    form: "pouch",
+    id: "GLP-3RT",
+    name: "GLP-3RT",
+    form: "vial",
     tint: "rgba(216,20,44,.45)",
-    short: "26 g protein per serving. Low sugar, mixes clean.",
-    description: "A high-protein whey isolate with a clean macro profile. Instantised for smooth mixing in water or milk. Protein contributes to a growth in muscle mass.",
+    description: "RTTA is a synthetic peptide that acts as a triple agonist, targeting the Glucagon-like peptide-1 (GLP-1), Glucose-dependent insulinotropic polypeptide (GIP), and Glucagon (GCG) receptors. In laboratory research, it is utilized to study the potentiation of metabolic signaling and the regulation of nutrient-stimulated hormone secretion. Studies focus on its efficacy in modulating glucose homeostasis and observing the synergistic effects of triple-receptor activation on lipid metabolism in experimental models.",
     badges: ["Best seller", "Batch tested"],
-    options: { Size: ["1 kg", "2 kg"], Flavour: ["Vanilla", "Chocolate", "Strawberry"] },
+    options: { Size: ["10 mg", "20 mg", "30mg"]},
     variants: [
-      { sku: "WPI-1-VAN", options: { Size: "1 kg", Flavour: "Vanilla" },     price: 29.99, stock: 40 },
-      { sku: "WPI-1-CHO", options: { Size: "1 kg", Flavour: "Chocolate" },   price: 29.99, stock: 32 },
-      { sku: "WPI-1-STR", options: { Size: "1 kg", Flavour: "Strawberry" },  price: 29.99, stock: 5 },
-      { sku: "WPI-2-VAN", options: { Size: "2 kg", Flavour: "Vanilla" },     price: 52.99, stock: 18 },
-      { sku: "WPI-2-CHO", options: { Size: "2 kg", Flavour: "Chocolate" },   price: 52.99, stock: 20 },
-      { sku: "WPI-2-STR", options: { Size: "2 kg", Flavour: "Strawberry" },  price: 52.99, stock: 0 }
+      { sku: "WPI-10", options: { Size: "10 mg"},     price: 39.99, stock: 40 },
+      { sku: "WPI-20", options: { Size: "20 mg"},   price: 74.99, stock: 32 },
+      { sku: "WPI-30", options: { Size: "30 mg"},   price: 109.99, stock: 32 },
+
     ],
     nutrition: [["Energy", "112 kcal"], ["Protein", "26 g"], ["Carbohydrate", "1.2 g"], ["of which sugars", "0.8 g"], ["Fat", "0.5 g"], ["Salt", "0.2 g"]],
     ingredients: "Whey protein isolate (<b>milk</b>) (93%), flavouring, emulsifier (<b>soy</b> lecithin), sweetener (sucralose).",
