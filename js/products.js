@@ -19,48 +19,36 @@ window.PRODUCTS = [
   {
     id: "GLP-3RT",
     name: "GLP-3RT",
+    category: "Research Compound",
     form: "vial",
     tint: "rgba(216,20,44,.45)",
     description: "RTTA is a synthetic peptide that acts as a triple agonist, targeting the Glucagon-like peptide-1 (GLP-1), Glucose-dependent insulinotropic polypeptide (GIP), and Glucagon (GCG) receptors. In laboratory research, it is utilized to study the potentiation of metabolic signaling and the regulation of nutrient-stimulated hormone secretion. Studies focus on its efficacy in modulating glucose homeostasis and observing the synergistic effects of triple-receptor activation on lipid metabolism in experimental models.",
     badges: ["Best seller", "Batch tested"],
     options: { Size: ["10 mg", "20 mg", "30mg"]},
     variants: [
-      { sku: "WPI-10", options: { Size: "10 mg"},     price: 39.99, stock: 40 },
-      { sku: "WPI-20", options: { Size: "20 mg"},   price: 74.99, stock: 32 },
-      { sku: "WPI-30", options: { Size: "30 mg"},   price: 109.99, stock: 32 },
+      { sku: "GLP-10", options: { Size: "10 mg"},     price: 39.99, stock: 40 },
+      { sku: "GLP-20", options: { Size: "20 mg"},   price: 74.99, stock: 32 },
+      { sku: "GLP-30", options: { Size: "30 mg"},   price: 109.99, stock: 32 },
 
     ],
-    nutrition: [["Energy", "112 kcal"], ["Protein", "26 g"], ["Carbohydrate", "1.2 g"], ["of which sugars", "0.8 g"], ["Fat", "0.5 g"], ["Salt", "0.2 g"]],
-    ingredients: "Whey protein isolate (<b>milk</b>) (93%), flavouring, emulsifier (<b>soy</b> lecithin), sweetener (sucralose).",
-    allergens: "Contains milk and soy. Made in a factory that also handles egg, gluten and nuts.",
-    features: ["26 g protein per 30 g serving", "Instantised — no clumping", "Suitable for vegetarians", "Batch certificate published"],
-    directions: "Mix one 30 g scoop with 250–300 ml of water or milk. Use as part of a balanced diet."
   },
   {
-    id: "creatine-monohydrate",
-    name: "Creatine Monohydrate",
-    category: "Performance",
-    form: "jar",
+    id: "BPC-157",
+    name: "BPC-157",
+    category: "Research Compound",
+    form: "Vial",
     tint: "rgba(216,20,44,.3)",
-    short: "Micronised 200-mesh creatine. Unflavoured.",
-    description: "Pure micronised creatine monohydrate. Fine mesh for easy mixing. Creatine increases physical performance in successive bursts of short-term, high-intensity exercise; the beneficial effect is obtained with a daily intake of 3 g.",
-    badges: ["Batch tested"],
-    options: { Size: ["250 g", "500 g", "1 kg"] },
+    description: "BPC-157 is a synthetic pentadecapeptide whose sequence corresponds to a partial fragment of a protein identified in gastric juice. In laboratory settings it is studied for its effect on angiogenic signalling, including VEGFR2 pathway activation, and on fibroblast migration and adhesion. Research is conducted in cell culture and animal models.",
+    badges: ["Best Seller", "Batch tested"],
+    options: { Size: ["10 mg"] },
     variants: [
-      { sku: "CRE-250", options: { Size: "250 g" }, price: 12.99, stock: 60 },
-      { sku: "CRE-500", options: { Size: "500 g" }, price: 19.99, stock: 45 },
-      { sku: "CRE-1K",  options: { Size: "1 kg" },  price: 34.99, stock: 22 }
+      { sku: "BPC-10", options: { Size: "10 mg" }, price: 39.99, stock: 60 },
     ],
-    nutrition: [["Creatine monohydrate", "5 g"], ["Energy", "0 kcal"]],
-    ingredients: "Creatine monohydrate (100%).",
-    allergens: "None of the 14 major allergens.",
-    features: ["5 g per serving", "Micronised 200 mesh", "Unflavoured — add to anything", "Vegan"],
-    directions: "Take one 5 g scoop daily with water or your shake."
   },
   {
     id: "pre-workout",
     name: "Pre-Workout Formula",
-    category: "Performance",
+    category: "Research Compound",
     form: "jar",
     tint: "rgba(240,56,78,.35)",
     short: "Caffeine, citrulline and beta-alanine. 30 servings.",
@@ -81,7 +69,7 @@ window.PRODUCTS = [
   {
     id: "electrolytes",
     name: "Electrolyte Hydration",
-    category: "Hydration",
+    category: "Research Compound",
     form: "jar",
     tint: "rgba(160,160,170,.35)",
     short: "Sodium, potassium and magnesium. Zero sugar.",
@@ -101,7 +89,7 @@ window.PRODUCTS = [
   {
     id: "protein-bar",
     name: "Protein Bar — Box of 12",
-    category: "Snacks",
+    category: "Research Compound",
     form: "bar",
     tint: "rgba(216,20,44,.25)",
     short: "20 g protein, 2 g sugar. Twelve bars.",
@@ -122,7 +110,7 @@ window.PRODUCTS = [
   {
     id: "omega-3",
     name: "Omega-3 Fish Oil",
-    category: "Health",
+    category: "Research Compound",
     form: "bottle",
     tint: "rgba(240,56,78,.25)",
     short: "1000 mg per softgel, 90 capsules.",
@@ -142,7 +130,7 @@ window.PRODUCTS = [
   {
     id: "multivitamin",
     name: "Daily Multivitamin",
-    category: "Health",
+    category: "Research Compound",
     form: "bottle",
     tint: "rgba(200,200,210,.3)",
     short: "Daily vitamins and minerals. 60 tablets.",
@@ -161,7 +149,7 @@ window.PRODUCTS = [
   {
     id: "shaker",
     name: "North Shore Shaker 700 ml",
-    category: "Accessories",
+    category: "Research Compound",
     form: "bottle",
     tint: "rgba(120,120,130,.35)",
     short: "Leak-proof, BPA-free, with mixing ball.",
@@ -182,10 +170,6 @@ window.PRODUCTS = [
 
 /* Categories shown on the home page and in filters */
 window.CATEGORIES = [
-  { id: "Protein",     blurb: "Whey, isolate and blends",      tint: "rgba(216,20,44,.6)" },
-  { id: "Performance", blurb: "Creatine and pre-workout",      tint: "rgba(240,56,78,.5)" },
-  { id: "Hydration",   blurb: "Electrolytes and intra-workout", tint: "rgba(216,20,44,.4)" },
-  { id: "Health",      blurb: "Vitamins and essentials",       tint: "rgba(200,200,210,.35)" },
-  { id: "Snacks",      blurb: "Bars and on-the-go",            tint: "rgba(240,56,78,.4)" },
-  { id: "Accessories", blurb: "Shakers and kit",               tint: "rgba(150,150,160,.4)" }
+  { id: "Research Compounds",     blurb: "compounds",      tint: "rgba(216,20,44,.6)" },
+ 
 ];
