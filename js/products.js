@@ -82,7 +82,7 @@ window.PRODUCTS = [
     form: "Vial",
     tint: "rgba(216,20,44,.25)",
     Short: "Molecular formula - C₁₀₁H₁₅₂N₂₈O₂₂S₂.",
-    description: "MOTS-c (Mitochondrial Open Reading Frame of the 12S rRNA-c) is a 16-amino acid peptide encoded by the mitochondrial genome rather than the cell nucleus. In laboratory settings, it is studied as a "mitokine" that facilitates mitochondrial-nuclear communication. Research primarily explores its role in activating the AMPK pathway, modulating the folate-methionine cycle, and its influence on metabolic homeostasis and cellular stress resistance in various animal and in vitro models.",
+    description: "MOTS-c (Mitochondrial Open Reading Frame of the 12S rRNA-c) is a 16-amino acid peptide encoded by the mitochondrial genome rather than the cell nucleus. In laboratory settings, it is studied as a 'mitokine' that facilitates mitochondrial-nuclear communication. Research primarily explores its role in activating the AMPK pathway, modulating the folate-methionine cycle, and its influence on metabolic homeostasis and cellular stress resistance in various animal and in vitro models.",
     options: { Size: ["10mg"] },
     variants: [
       { sku: "MOT-SC1", options: { Size: "10 mg" },       price: 39.99, stock: 40 },
@@ -113,8 +113,8 @@ window.PRODUCTS = [
     badges: ["Best Seller"],
     options: { Size: ["10 mg", "20 mg",]},
     variants: [
-      { sku: "TES-10", options: { Size: "10 mg" }, price: 79.99, stock: 80 }
-      { sku: "TES-20", options: { Size: "20 mg" }, price: 129.99, stock: 80 }
+      { sku: "TES-10", options: { Size: "10 mg" }, price: 79.99, stock: 80 },
+      { sku: "TES-20", options: { Size: "20 mg" }, price: 129.99, stock: 80 },
 
     ],
   },
@@ -131,6 +131,7 @@ window.PRODUCTS = [
     variants: [
       { sku: "NAD-1000", options: { Size: "1000 mg" },  price: 89.99, stock: 100 },
     ],
+  },
      {
      id: "WOLVERINE BLEND",
     name: "WOLVERINE BLEND",
@@ -157,5 +158,4 @@ window.CATEGORIES = [
   { id: "Tesamorelin",     blurb: "Tesamorelin",      tint: "rgba(216,20,44,.6)" },
   { id: "NAD+", blurb: "NAD+",      tint: "rgba(240,56,78,.5)" },
   { id: "WOLVERINE BLEND",   blurb: "WOLVERINE BLEND", tint: "rgba(216,20,44,.4)" },
-];
 ];
