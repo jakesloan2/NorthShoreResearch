@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build a bundle | North Shore Research</title>
+  <meta name="description" content="Build a research-material bundle for laboratory and in-vitro research use only.">
+  <link rel="canonical" href="https://www.northshoreresearch.co.uk/bundle.html">
+  <link rel="icon" href="assets/favicon.png" type="image/png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><meta name="theme-color" content="#0A0A0C">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="main">
+  <div class="page-head"><div class="container"><div class="crumbs"><a href="index.html">Home</a> / Build a bundle</div><span class="eyebrow">Research bundles</span><h1>Build a research bundle</h1><p class="muted mb-0">Choose up to four listed materials. This tool is for catalogue convenience only; it is not a recommendation, protocol or research plan.</p></div></div>
+
+  <section class="container bundle-builder">
+    <div class="bundle-builder__catalogue">
+      <div class="bundle-builder__intro"><h2>Choose your materials</h2><p>Combine any listed materials in one basket. Three to nine items receive 30% off; ten or more receive 40% off. The saving is calculated automatically in the basket.</p></div>
+      <div class="bundle-builder__grid" id="bundle-catalogue"></div>
+    </div>
+    <div class="bundle-review" id="bundle-review" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bundle-box-title">
+      <button class="bundle-review__backdrop" type="button" aria-label="Close bundle review" data-bundle-review-close></button>
+      <aside class="bundle-box panel" aria-live="polite">
+        <div class="bundle-box__head"><h2 id="bundle-box-title">Your bundle</h2><span id="bundle-count">0 of 4 selected</span></div>
+        <button class="bundle-review__close" type="button" data-bundle-review-close>Close review <span aria-hidden="true">×</span></button>
+        <ol class="bundle-box__slots" id="bundle-slots"></ol>
+        <div class="bundle-box__summary" id="bundle-summary">Select a material to begin.</div>
+        <p class="note">Documentation and COAs are available on request, subject to the relevant product, batch and verification.</p>
+        <button class="btn btn--primary btn--block btn--lg" id="bundle-add-all" type="button" disabled>Add selected materials to basket</button>
+        <a class="btn btn--ghost btn--block mt-2" href="shop.html">View all products</a>
+      </aside>
+    </div>
+  </section>
+</main>
+<button class="bundle-mobile-review" id="bundle-mobile-review" type="button" aria-controls="bundle-review" aria-expanded="false"><span><strong id="bundle-mobile-count">0 of 4 picked</strong><small>Your bundle</small></span><b>Review</b></button>
+
+<script src="js/config.js"></script><script src="js/products.js"></script><script src="js/discounts.js"></script>
+<script src="js/cart.js"></script><script src="js/cookies.js"></script><script src="js/main.js"></script>
+<script src="js/age-gate.js"></script><script src="js/offer.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const selected = [];
+  const catalogue = document.getElementById("bundle-catalogue");
+  const slots = document.getElementById("bundle-slots");
+  const count = document.getElementById("bundle-count");
+  const summary = document.getElementById("bundle-summary");
+  const addAll = document.getElementById("bundle-add-all");
+  const review = document.getElementById("bundle-review");
+  const reviewButton = document.getElementById("bundle-mobile-review");
+  const mobileCount = document.getElementById("bundle-mobile-count");
+  const available = PRODUCTS.filter(p => p.variants.some(v => v.stock > 0 && Number.isFinite(v.price)));
+
+  catalogue.innerHTML = available.map(p => {
+    const variants = p.variants.filter(v => v.stock > 0 && Number.isFinite(v.price));
+    return `<article class="bundle-card" data-product="${p.id}">
+      <div class="bundle-card__media">${Cart.tile(p)}</div>
+      <div class="bundle-card__body"><h3>${p.name}</h3><p>${p.short || p.Short || ""}</p>
+      ${variants.length > 1 ? `<label class="visually-hidden" for="bundle-${p.id}">Select ${p.name} size</label><select id="bundle-${p.id}" class="select" data-variant>${variants.map(v => `<option value="${v.sku}">${Object.values(v.options).join(" · ")} — ${Cart.money(v.price)}</option>`).join("")}</select>` : `<p class="bundle-card__price">${Cart.money(variants[0].price)} · ${Object.values(variants[0].options).join(" · ")}</p>`}
+      <button class="btn btn--secondary btn--block" type="button" data-add>+ Add to bundle</button></div>
+    </article>`;
+  }).join("");
+
+  function line(item) {
+    const product = PRODUCTS.find(p => p.id === item.id);
+    const variant = product.variants.find(v => v.sku === item.sku);
+    return { product, variant };
+  }
+  function render() {
+    count.textContent = `${selected.length} of 4 selected`;
+    mobileCount.textContent = `${selected.length} of 4 picked`;
+    slots.innerHTML = Array.from({ length: 4 }, (_, i) => {
+      const item = selected[i];
+      if (!item) return `<li><span>${i + 1}</span><strong>Empty slot</strong></li>`;
+      const l = line(item);
+      return `<li><span>${i + 1}</span><div><strong>${l.product.name}</strong><small>${Object.values(l.variant.options).join(" · ")} · ${Cart.money(l.variant.price)}</small></div><button class="icon-btn" type="button" aria-label="Remove ${l.product.name}" data-remove="${i}">×</button></li>`;
+    }).join("");
+    const subtotal = selected.reduce((sum, item) => sum + line(item).variant.price, 0);
+    const rate = selected.length >= 10 ? .4 : selected.length >= 3 ? .3 : 0;
+    const saving = subtotal * rate;
+    summary.innerHTML = selected.length ? `<strong>Listed total: ${Cart.money(subtotal)}</strong>${saving ? `<span>Bundle saving in basket: −${Cart.money(saving)}</span>` : `<span>Add any three listed items to unlock a 30% basket saving.</span>`}` : "Select a material to begin.";
+    addAll.disabled = selected.length === 0;
+  }
+  catalogue.addEventListener("click", e => {
+    const add = e.target.closest("[data-add]"); if (!add) return;
+    if (selected.length >= 4) { UI.toast("A bundle can contain up to four selections.", "warning"); return; }
+    const card = add.closest("[data-product]"); const product = PRODUCTS.find(p => p.id === card.dataset.product);
+    const variant = card.querySelector("[data-variant]");
+    selected.push({ id: product.id, sku: variant ? variant.value : product.variants.find(v => v.stock > 0).sku });
+    render();
+  });
+  slots.addEventListener("click", e => { const remove = e.target.closest("[data-remove]"); if (remove) { selected.splice(Number(remove.dataset.remove), 1); render(); } });
+  function openReview() { review.setAttribute("aria-hidden", "false"); reviewButton.setAttribute("aria-expanded", "true"); document.body.classList.add("bundle-review-open"); }
+  function closeReview() { review.setAttribute("aria-hidden", "true"); reviewButton.setAttribute("aria-expanded", "false"); document.body.classList.remove("bundle-review-open"); }
+  reviewButton.addEventListener("click", openReview);
+  review.addEventListener("click", e => { if (e.target.closest("[data-bundle-review-close]")) closeReview(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && review.getAttribute("aria-hidden") === "false") closeReview(); });
+  addAll.addEventListener("click", () => {
+    const grouped = new Map(); selected.forEach(item => grouped.set(`${item.id}:${item.sku}`, (grouped.get(`${item.id}:${item.sku}`) || 0) + 1));
+    let ok = true; grouped.forEach((qty, key) => { const [id, sku] = key.split(":"); if (!Cart.add(id, sku, qty)) ok = false; });
+    if (!ok) return; selected.length = 0; render(); closeReview(); UI.toast("Bundle added to basket", "success"); UI.open("cart");
+  });
+  render();
+});
+</script>
+</body>
+</html>
