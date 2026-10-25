@@ -183,6 +183,8 @@ p { margin: 0 0 1em; }
 .drawer__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .drawer__nav a { display: block; padding: 14px 8px; border-bottom: 1px solid var(--line); font-weight: 500; font-size: 1.05rem; }
 .drawer__nav a.sub { padding-left: 24px; font-size: .95rem; color: var(--ink-2); font-weight: 400; }
+.drawer__nav { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding-bottom: 24px; }
+.drawer__panel--left { overflow: hidden; }
 .drawer__nav .drawer__featured { margin: 4px 0 14px; padding: 15px; border: 0; border-radius: var(--radius-sm); background: var(--accent); color: #fff; font-family: var(--font-head); font-size: 1.05rem; }
 .drawer__featured span { display: block; margin-top: 3px; color: #fff; opacity: .86; font-family: var(--font-body); font-size: .76rem; font-weight: 500; }
 .drawer__label { padding: 20px 8px 7px; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
