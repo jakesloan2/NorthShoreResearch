@@ -27,7 +27,7 @@ window.PRODUCTS = [
     badges: ["Best seller"],
     options: { Size: ["10 mg", "20 mg", "30 mg"]},
     variants: [
-      { sku: "GLP-10", options: { Size: "10 mg"}, price: 45.99, stock: 10, image: "images/glp-3rt-10mg.jpg" },
+      { sku: "GLP-10", options: { Size: "10 mg"}, price: 44.99, stock: 10, image: "images/glp-3rt-10mg.jpg" },
       { sku: "GLP-20", options: { Size: "20 mg"}, price: 74.99, stock: 10, image: "images/glp-3rt-20mg.jpg" },
       { sku: "GLP-30", options: { Size: "30 mg"}, price: 109.99, stock: 10, image: "images/glp-3rt-30mg.jpg" },
 
