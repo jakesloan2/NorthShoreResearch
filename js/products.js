@@ -27,7 +27,7 @@ window.PRODUCTS = [
     badges: ["Best seller"],
     options: { Size: ["10 mg", "20 mg", "30 mg"]},
     variants: [
-      { sku: "GLP-10", options: { Size: "10 mg"}, price: 39.99, stock: 10, image: "images/glp-3rt-10mg.jpg" },
+      { sku: "GLP-10", options: { Size: "10 mg"}, price: 45.99, stock: 10, image: "images/glp-3rt-10mg.jpg" },
       { sku: "GLP-20", options: { Size: "20 mg"}, price: 74.99, stock: 10, image: "images/glp-3rt-20mg.jpg" },
       { sku: "GLP-30", options: { Size: "30 mg"}, price: 109.99, stock: 10, image: "images/glp-3rt-30mg.jpg" },
 
@@ -46,7 +46,7 @@ window.PRODUCTS = [
     badges: ["Best Seller"],
     options: { Size: ["10 mg"] },
     variants: [
-      { sku: "BPC-10", options: { Size: "10 mg" }, price: 39.99, stock: 10, image: "images/bpc-157-10mg.jpg", imageFit: "contain" },
+      { sku: "BPC-10", options: { Size: "10 mg" }, price: 25.00, stock: 10, image: "images/bpc-157-10mg.jpg", imageFit: "contain" },
     ],
   },
   {
@@ -121,8 +121,8 @@ window.PRODUCTS = [
     badges: ["Best Seller"],
     options: { Size: ["10 mg", "20 mg",]},
     variants: [
-      { sku: "TES-10", options: { Size: "10 mg" }, price: 79.99, stock: 10, image: "images/tesamorelin-10mg.jpg" },
-      { sku: "TES-20", options: { Size: "20 mg" }, price: 129.99, stock: 10, image: "images/tesamorelin-20mg.jpg" },
+      { sku: "TES-10", options: { Size: "10 mg" }, price: 59.99, stock: 10, image: "images/tesamorelin-10mg.jpg" },
+      { sku: "TES-20", options: { Size: "20 mg" }, price: 99.99, stock: 10, image: "images/tesamorelin-20mg.jpg" },
 
     ],
   },
@@ -138,7 +138,7 @@ window.PRODUCTS = [
     badges: [],
     options: { Size: ["1000 mg"] },
     variants: [
-      { sku: "NAD-1000", options: { Size: "1000 mg" }, price: 89.99, stock: 10, image: "images/nad-plus-1000mg.jpg" },
+      { sku: "NAD-1000", options: { Size: "1000 mg" }, price: 69.99, stock: 10, image: "images/nad-plus-1000mg.jpg" },
     ],
   },
      {
@@ -153,7 +153,7 @@ window.PRODUCTS = [
     badges: ["NEW"],
     options: { Size: ["10 mg / 10 mg"] },
     variants: [
-      { sku: "WOL-10-10", options: { Size: "10 mg / 10 mg" }, price: 49.99, stock: 10, image: "images/wolverine-blend-10mg-10mg.jpg" },
+      { sku: "WOL-10-10", options: { Size: "10 mg / 10 mg" }, price: 39.99, stock: 10, image: "images/wolverine-blend-10mg-10mg.jpg" },
     ],
   },
 ];
